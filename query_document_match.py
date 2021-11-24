@@ -8,12 +8,12 @@ import pandas as pd
 
 class QueryDocumentMatcher():
     def __init__(self, embeddings_list_file='tensor/embeddings_list.pt', doc_ids_file='tensor/doc_ids.pt', \
-        phrases_list_file='tensor/phrase_list.txt', data_path='data/content_thickness_clean.xlsx', \
+        phrases_list_file='tensor/phrase_list.txt', data_path='data/ucas_faq.xlsx', \
         component_file='data/components.txt', question_column='点位名称', car_column='车系名称', text_column='内容节选', \
-        test_size=-1, gpu=True, index_search_topk=128, res_topk=32, \
+        test_size=-1, gpu=True, index_search_topk=32, res_topk=32, \
         model_name="sentence-transformers/distiluse-base-multilingual-cased-v2", \
         cls_model_name="/mnt/bd/zhengxin/transformers/examples/pytorch/text-classification/models/content_thickness_category", \
-        vector_dimension=768*2, **args):
+        vector_dimension=768*1, **args):
         self.embeddings_list_file=embeddings_list_file
         self.doc_ids_file=doc_ids_file
         self.appear_phrases_list_file=phrases_list_file
